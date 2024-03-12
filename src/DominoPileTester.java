@@ -1,9 +1,11 @@
 import org.junit.Test;
+import org.junit.Assert;
 
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.testng.AssertJUnit.assertTrue;
 
 public class DominoPileTester {
 
@@ -20,14 +22,14 @@ public class DominoPileTester {
     @Test
     public void testConstructor() {
         setUp();
-        assertTrue("Ensure that your constructor in the DominoPile class has been implemented correctly!", dominoPile != null);
+        Assert.assertTrue("Ensure that your constructor in the DominoPile class has been implemented correctly!", dominoPile != null);
         tearDown();
     }
 
     @Test
     public void testGetPile() {
         setUp();
-        assertTrue("Ensure that your getPile method in the DominoPile class has been implemented correctly!", dominoPile.getPile() != null);
+        Assert.assertTrue("Ensure that your getPile method in the DominoPile class has been implemented correctly!", dominoPile.getPile() != null);
         tearDown();
     }
 
@@ -39,8 +41,8 @@ public class DominoPileTester {
         dominoPile.newStack6();
         System.out.println(dominoPile.getPile());
         for (int i = 0; i < dominoPile.getPile().size(); i++) {
-            assertTrue("Ensure that your newStack6 method in the DominoPile class has been implemented correctly!", dominoPile.getPile().get(i).getTop() == top);
-            assertTrue("Ensure that your newStack6 method in the DominoPile class has been implemented correctly!", dominoPile.getPile().get(i).getBottom() == bottom);
+            Assert.assertTrue("Ensure that your newStack6 method in the DominoPile class has been implemented correctly!", dominoPile.getPile().get(i).getTop() == top);
+            Assert.assertTrue("Ensure that your newStack6 method in the DominoPile class has been implemented correctly!", dominoPile.getPile().get(i).getBottom() == bottom);
             System.out.println("Expected Top: " + top + " Observed Top: " + dominoPile.getPile().get(i).getTop());
             System.out.println("Expected Bottom: " + bottom + " Observed bottom: " + dominoPile.getPile().get(i).getBottom());
             if (bottom == 6) {
@@ -60,7 +62,7 @@ public class DominoPileTester {
         setUp();
         dominoPile.newStack6();
         System.out.println(dominoPile.getPile().size());
-        assertTrue("Ensure that your newStack6 method in the DominoPile class has been implemented correctly!", dominoPile.getPile().size() == 28);
+        Assert.assertTrue("Ensure that your newStack6 method in the DominoPile class has been implemented correctly!", dominoPile.getPile().size() == 28);
         tearDown();
     }
 
@@ -87,7 +89,7 @@ public class DominoPileTester {
 
             bottom++;
         }
-       assertTrue("Ensure that your shuffleOption1 method in the DominoPile class has been implemented correctly!", !allInSameOrder);
+       Assert.assertTrue("Ensure that your shuffleOption1 method in the DominoPile class has been implemented correctly!", !allInSameOrder);
    }
 
    
